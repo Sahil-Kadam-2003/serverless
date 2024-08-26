@@ -1,0 +1,17 @@
+service: aws-node-express-api-project 
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-west-2
+
+functions:
+  api:
+    handler: sample.handler 
+    name: express-api-function
+    events:
+      - httpApi: '*' 
+
+plugins:
+  - serverless-offline 
